@@ -202,6 +202,10 @@
     transition: border-color 0.2s, transform 0.2s;
   }
   .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .skill-card.exploring {
+    border-style: dashed;
+    background: transparent;
+  }
   .skill-icon {
     width: 36px; height: 36px;
     background: var(--accent-light);
@@ -209,7 +213,11 @@
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1rem;
   }
+  .skill-card.exploring .skill-icon {
+    background: var(--paper-warm);
+  }
   .skill-icon svg { width: 17px; height: 17px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+  .skill-card.exploring .skill-icon svg { stroke: var(--ink-faint); }
   .skill-card h3 {
     font-family: var(--serif);
     font-size: 1.05rem;
@@ -238,6 +246,10 @@
     background: var(--accent-light);
     padding: 0.25rem 0.6rem;
     border-radius: 2px;
+  }
+  .tag.exploring {
+    color: var(--ink-faint);
+    background: var(--paper-warm);
   }
 
   /* PUBLICATION */
@@ -316,6 +328,8 @@
   .skill-card:nth-child(1) { animation-delay: 0.05s; }
   .skill-card:nth-child(2) { animation-delay: 0.12s; }
   .skill-card:nth-child(3) { animation-delay: 0.19s; }
+  .skill-card:nth-child(4) { animation-delay: 0.26s; }
+  .skill-card:nth-child(5) { animation-delay: 0.33s; }
 
   @media (max-width: 640px) {
     .hero { grid-template-columns: 1fr; gap: 1rem; }
@@ -380,6 +394,7 @@
         <span class="tag">Schema.org</span>
         <span class="tag">GSC</span>
         <span class="tag">Screaming Frog</span>
+        <span class="tag">Hreflang</span>
       </div>
     </div>
 
@@ -419,6 +434,17 @@
         <span class="tag">Product Data</span>
         <span class="tag">CSV / XLSX</span>
         <span class="tag">QA</span>
+      </div>
+    </div>
+
+    <div class="skill-card exploring">
+      <div class="skill-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3>GEO / AEO</h3>
+      <p>Exploring how AI-driven search engines surface and cite content — a fast-moving field without established playbooks yet.</p>
+      <div class="skill-tags">
+        <span class="tag exploring">Currently Exploring</span>
       </div>
     </div>
 
@@ -477,7 +503,7 @@
 
 <footer>
   <span>Niccolò Colombini &copy; 2026</span>
-  <span>Genova, Italy</span>
+  <span>Arcidosso, Italy</span>
 </footer>
 
 </body>
